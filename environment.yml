@@ -1,0 +1,19 @@
+name: dami_ephys
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - python
+  - pip
+  - ipykernel
+  - numpy
+  - matplotlib
+  - pandas
+  - scikit-learn
+  - pypots
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8
