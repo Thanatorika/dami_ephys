@@ -512,5 +512,3 @@ Temporary Items
 # add your custom gitignore here:
 !.gitignore
 !.gitsubmodules
-
-__pycache__/
