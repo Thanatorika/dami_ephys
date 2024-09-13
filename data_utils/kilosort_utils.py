@@ -21,7 +21,8 @@ def load_sample_rate(ks4_directory):
 
     Parameters
     ----------
-    ks4_directory (string): the directory of the KS4 output files.
+    ks4_directory: string
+        the directory of the KS4 output files.
 
     Returns
     ----------
