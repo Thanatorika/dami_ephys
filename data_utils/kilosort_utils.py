@@ -26,7 +26,8 @@ def load_sample_rate(ks4_directory):
 
     Returns
     ----------
-    sample_rate (float): the sampling rate of the KS4 outputs.
+    sample_rate: float 
+        the sampling rate of the KS4 outputs.
     """
 
     try:
@@ -47,12 +48,14 @@ def load_clusters(ks4_directory):
 
     Parameters
     ----------
-    ks4_directory (string): the directory of the KS4 output files.
+    ks4_directory: string 
+        the directory of the KS4 output files.
 
     Returns
     ----------
-    clusters (numpy array): an array with length of the number of spikes in the whole KS4 output,
-                            whose values are the cluster indices of the spikes.
+    clusters: numpy array 
+        an array with length of the number of spikes in the whole KS4 output,
+        whose values are the cluster indices of the spikes.
     """
 
     try:

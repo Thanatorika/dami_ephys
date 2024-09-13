@@ -37,6 +37,6 @@ def get_max_spike_time(spike_trains_dict):
     return max(max_list)
 
 def save_spike_trains(spike_trains_dict, path_to_save):
-    # TODO: API
+    # TODO:
 
     return
