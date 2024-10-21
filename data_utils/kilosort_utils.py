@@ -2,6 +2,9 @@
 Last edited: 2024-Aug-29 by RW.
 
 Data file utilities for Kilosort4 (KS4 in short).
+
+Some of the API documents are generated with Bito AI and GPT-4o mini, and are labeled with [AI generated].
+These API docs will be human proofread and modified if necessary. 
 """
 
 import numpy as np
@@ -164,7 +167,19 @@ def make_dump_filter(ks4_spike_clusters, cluster_indices_to_filter):
     return np.logical_not(keep_filter)
 
 def make_filtered_clusters_and_times(ks4_spike_clusters, ks4_spike_times, cluster_filter):
-    # TODO: API
+    """[AI generated] This function filters spike clusters and spike times based on a given filter condition.
+
+    Parameters
+    ----------
+    ks4_spike_clusters  (array-like): The original spike cluster data, typically an array or list containing identifiers for different clusters.
+    ks4_spike_times  (array-like): The original spike time data, typically an array or list containing timestamps for the corresponding spikes.
+    cluster_filter  (array-like): The filter condition, usually a boolean array or index array indicating which clusters and times to retain.
+
+    Returns
+    ------
+    Filtered spike clusters (array-like): The spike cluster array filtered according to  cluster_filter.
+    Filtered spike times (array-like): The spike time array filtered according to  cluster_filter.
+    """
     
     return ks4_spike_clusters[cluster_filter], ks4_spike_times[cluster_filter]
 

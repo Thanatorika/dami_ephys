@@ -6,7 +6,12 @@ Code utilities for computing firing rates from spike bins.
 
 import numpy as np
 
-def compute_firing_rate(spike_bins, bin_length):
+import sys
+sys.path.append("..")
+
+from data_utils import vr_utils as vru
+
+def compute_firing_rate_from_bins(spike_bins, bin_length):
     # TODO: API
 
     rate_ratio = 1000 / bin_length
@@ -14,6 +19,11 @@ def compute_firing_rate(spike_bins, bin_length):
     firing_rate = spike_bins * rate_ratio
 
     return firing_rate
+
+def compute_firing_rate_from_trains(spike_trains, bin_length):
+    # TODO: API
+
+    rate_ratio = 1000 / bin_length
 
 def compute_firing_rate_mean(firing_rate):
     # TODO: API
