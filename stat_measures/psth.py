@@ -1,5 +1,5 @@
 """Creator: Ren Wang.
-Last edited: 2024-Oct-18 by RW.
+Last edited: 2024-Dec-17 by RW.
 
 Code utilities for computing Peristimulus Time Histograms (PSTH) from spike bins.
 """
