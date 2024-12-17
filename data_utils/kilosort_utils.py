@@ -1,5 +1,5 @@
 """Creator: Ren Wang.
-Last edited: 2024-Aug-29 by RW.
+Last edited: 2024-Dec-17 by RW.
 
 Data file utilities for Kilosort4 (KS4 in short).
 
@@ -226,11 +226,6 @@ def time_segmentation(spike_clusters, spike_times, start_time, end_time):
     segmented_times = spike_times[segment_filter]
 
     return segmented_clusters, segmented_times
-
-def time_segmentation_second(spike_clusters, spike_times, start_time, end_time):
-    # TODO: API
-
-    return time_segmentation(spike_clusters, spike_times, start_time * 1000, end_time * 1000)
 
 def time_segmentation_reduced(spike_clusters, spike_times, start_time, end_time):
     """Same as time_segmentation, but the spike times will be reduced to times from the segmentation start time.
