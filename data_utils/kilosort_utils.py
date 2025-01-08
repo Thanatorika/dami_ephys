@@ -303,13 +303,12 @@ def spike_count_segmentation_reduced(spike_clusters, spike_times, start_count, e
     spike_times (array-like): Array of spike times.
     start_count (int): The starting index for segmentation.
     end_count (int): The ending index for segmentation.
-    
+
     Returns:
     tuple: A tuple containing:
         - segmented_clusters (array-like): The segmented spike clusters.
         - adjusted_times (array-like): The segmented and adjusted spike times.
     """
-    # TODO: API
     
     segmented_clusters, segmented_times = spike_count_segmentation(spike_clusters, spike_times, start_count, end_count)
 
