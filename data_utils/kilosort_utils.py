@@ -3,7 +3,7 @@ Last edited: 2024-Dec-17 by RW.
 
 Data file utilities for Kilosort4 (KS4 in short).
 
-Some of the API documents are generated with Bito AI and GPT-4o mini, and are labeled with [AI generated].
+Some of the API documents are generated with Github Copilot, and are labeled with [AI generated].
 These API docs will be human proofread and modified if necessary. 
 """
 
@@ -188,7 +188,16 @@ def make_filtered_clusters_and_times(ks4_spike_clusters, ks4_spike_times, cluste
     return ks4_spike_clusters[cluster_filter], ks4_spike_times[cluster_filter]
 
 def reduce_clusters_from_filtered(filtered_clusters):
-    # TODO: API
+    """[AI generated] Reduce the cluster indices to a continuous range starting from 0.
+
+    Parameters
+    ----------
+    filtered_clusters (numpy array): The filtered spike cluster data.
+
+    Returns
+    ----------
+    reduced_clusters (numpy array): The reduced spike cluster data with continuous indices.
+    """
 
     sort_order = np.argsort(filtered_clusters)
     reverse_order = np.argsort(sort_order)
@@ -207,7 +216,19 @@ def reduce_clusters_from_filtered(filtered_clusters):
     return reduced_clusters
 
 def make_reduced_clusters_and_times(ks4_spike_clusters, ks4_spike_times, cluster_filter):
-    # TODO: API
+    """[AI generated] Filters and reduces spike clusters and times based on a given cluster filter.
+
+    Args:
+        ks4_spike_clusters (array-like): Array of spike cluster IDs.
+        ks4_spike_times (array-like): Array of spike times corresponding to the clusters.
+        cluster_filter (function): A function that takes a cluster ID and returns a boolean indicating 
+                                   whether the cluster should be included.
+
+    Returns:
+        tuple: A tuple containing:
+            - reduced_clusters (array-like): Array of reduced spike cluster IDs after filtering.
+            - filtered_times (array-like): Array of spike times corresponding to the reduced clusters.
+    """
 
     filtered_clusters, filtered_times = make_filtered_clusters_and_times(ks4_spike_clusters, ks4_spike_times, cluster_filter)
 
@@ -219,7 +240,17 @@ def make_reduced_clusters_and_times(ks4_spike_clusters, ks4_spike_times, cluster
 # Take a time or spike count interval from the given spike clusters and spike times  
 
 def time_segmentation(spike_clusters, spike_times, start_time, end_time):
-    # TODO: API
+    """[AI generated] Segments spike data based on a given time range.
+
+    Parameters:
+    spike_clusters (array-like): Array of cluster IDs corresponding to each spike.
+    spike_times (array-like): Array of spike times.
+    start_time (float): The start time for the segmentation.
+    end_time (float): The end time for the segmentation.
+
+    Returns:
+    tuple: Two arrays, the first containing the segmented cluster IDs and the second containing the segmented spike times.
+    """
 
     segment_filter = (spike_times > start_time) & (spike_times <= end_time)
     segmented_clusters = spike_clusters[segment_filter]
@@ -248,11 +279,36 @@ def time_segmentation_reduced(spike_clusters, spike_times, start_time, end_time)
     return segmented_clusters, segmented_times - start_time
 
 def spike_count_segmentation(spike_clusters, spike_times, start_count, end_count):
-    # TODO: API
+    """ [AI generated] Segments spike clusters and spike times based on the provided start and end indices.
+
+    Parameters:
+    spike_clusters (array-like): Array of spike cluster IDs.
+    spike_times (array-like): Array of spike times corresponding to the spike clusters.
+    start_count (int): The starting index for segmentation.
+    end_count (int): The ending index for segmentation.
+
+    Returns:
+    tuple: A tuple containing two arrays:
+        - Segmented spike clusters from start_count to end_count.
+        - Segmented spike times from start_count to end_count.
+    """
 
     return spike_clusters[start_count : end_count], spike_times[start_count : end_count]
 
 def spike_count_segmentation_reduced(spike_clusters, spike_times, start_count, end_count):
+    """ [AI generated] Segments spike clusters and spike times within a specified range and adjusts the spike times.
+
+    Parameters:
+    spike_clusters (array-like): Array of spike cluster IDs.
+    spike_times (array-like): Array of spike times.
+    start_count (int): The starting index for segmentation.
+    end_count (int): The ending index for segmentation.
+    
+    Returns:
+    tuple: A tuple containing:
+        - segmented_clusters (array-like): The segmented spike clusters.
+        - adjusted_times (array-like): The segmented and adjusted spike times.
+    """
     # TODO: API
     
     segmented_clusters, segmented_times = spike_count_segmentation(spike_clusters, spike_times, start_count, end_count)
